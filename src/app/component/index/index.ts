@@ -1,4 +1,4 @@
-/// <reference path="../../../d.ts/require.d.ts" />
+/// <reference path="../../../require.d.ts" />
 
 import * as angular from 'angular';
 
