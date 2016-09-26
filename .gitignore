@@ -1,0 +1,5 @@
+# node_moudles
+node_modules/
+
+# build code
+build/
