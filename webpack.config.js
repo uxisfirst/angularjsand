@@ -18,6 +18,7 @@ let config = {
         loader: 'awesome-typescript-loader',
         exclude: [
           /node_modules/,
+          /test/
         ],
       },
       { test: /\.html$/, loader: 'html-loader' },
