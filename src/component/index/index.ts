@@ -18,7 +18,7 @@ export class TestController extends BaseController {
 
 export let testComponent = {
   template: require('./index.html'),
-  controller: ["$scope", "$rootScope", TestController],
+  controller: TestController,
   bindings: {
     name: "@",
     age: "@",
