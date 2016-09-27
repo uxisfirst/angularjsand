@@ -1,6 +1,7 @@
 // Karma configuration
 // Generated on Tue Sep 27 2016 10:24:38 GMT+0900 (JST)
 
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = function (config) {
@@ -16,7 +17,7 @@ module.exports = function (config) {
     plugins: [
       'karma-webpack',
       'karma-jasmine',
-      'karma-chrome-launcher',
+      'karma-phantomjs-launcher',
       'karma-jasmine-html-reporter',
       'karma-sourcemap-loader',
     ],
@@ -47,11 +48,17 @@ module.exports = function (config) {
           },
         ]
       },
-      devtool: 'source-map',
+      devtool: 'inline-source-map',
       resolve: {
-        extensions: ['.ts'],
+        extensions: ['.ts', '.js'],
         modules: ['node_modules', path.join(__dirname, 'test')]
       },
+      plugins: [
+        new webpack.SourceMapDevToolPlugin({
+          filename: null, // if no value is provided the sourcemap is inlined
+          test: /\.(ts|js)($|\?)/i // process .js and .ts files only
+        })
+      ]
     },
 
     // test results reporter to use
@@ -74,7 +81,7 @@ module.exports = function (config) {
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'],
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
