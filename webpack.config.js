@@ -25,7 +25,7 @@ let config = {
     ]
   },
   entry: {
-    app: path.join(__dirname, 'src/app/app.ts'),
+    app: path.join(__dirname, 'src/app.ts'),
   },
   output: {
     path: path.join(__dirname, 'build'),
