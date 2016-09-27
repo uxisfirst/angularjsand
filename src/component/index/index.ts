@@ -1,10 +1,10 @@
-/// <reference path="../../../d.ts/require.d.ts" />
+/// <reference path="../../require.d.ts" />
 
 import * as angular from 'angular';
 
-import { BaseScope, BaseController } from '../../../common/base';
+import { BaseScope, BaseController } from '../../common/base';
 
-class TestController extends BaseController {
+export class TestController extends BaseController {
   name: string;
   age: number;
 
@@ -18,7 +18,7 @@ class TestController extends BaseController {
 
 export let testComponent = {
   template: require('./index.html'),
-  controller: ["$scope", "$rootScope", TestController],
+  controller: TestController,
   bindings: {
     name: "@",
     age: "@",
