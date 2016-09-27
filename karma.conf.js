@@ -46,6 +46,7 @@ module.exports = function (config) {
               /node_modules/,
             ],
           },
+          { test: /\.html$/, loader: 'html-loader' },
         ]
       },
       devtool: 'inline-source-map',
