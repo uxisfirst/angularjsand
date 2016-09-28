@@ -1,5 +1,6 @@
 <div>
   Name: {{$ctrl.name}}<br> Age: {{$ctrl.age}}
+  <span ng-show="$ctrl.name">Name is found</span>
 </div>
 <div>
   From: {{$ctrl.$scope.from}}<br> Nickname: {{$ctrl.$scope.nickname}}<br> Born: {{$ctrl.$scope.born.year}}/{{$ctrl.$scope.born.month}}/{{$ctrl.$scope.born.day}}
